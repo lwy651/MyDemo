@@ -1,0 +1,71 @@
+html {
+  background-color: #fcfcfc;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+  margin: 0;
+  padding: 0
+}
+.menu-bar {
+  height: 48px;
+  text-align: center
+}
+.menu-bar .left-part {
+  float: left;
+  margin-top: 10px
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 99997;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0,0,0,.3)
+}
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  border: 0
+}
+#waterfall {
+  position: relative;
+  min-height: 500px;
+  margin: 16px auto 0
+}
+#logo {
+  float: left;
+  margin-right: 20px;
+  width: 80px;
+  height: 28px;
+  background: url(/images/logo.svg) 0 0 no-repeat
+}
+.page-with-header {
+  padding-top: 48px
+}
+.page-min-width {
+  min-width: 1024px;
+}
+.wfc {
+  position: absolute;
+  left: -200px;
+  top: 1000px;
+  margin-bottom: 15px;
+  -webkit-transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out
+}
+.pin {
+  position: absolute;
+  width: 236px;
+  font-size: 12px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3)
+}
+#waterfall .wft {
+  -webkit-transition: left .3s ease-in-out,top .3s ease-in-out;
+  -moz-transition: left .5s ease-in-out,top .5s ease-in-out;
+  -o-transition: left .3s ease-in-out,top .3s ease-in-out
+}

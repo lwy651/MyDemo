@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="/javascripts/jquery-2.2.2.min.js"></script>
+	<style>
+	.paper{
+		background-color: #fff;
+		position:relative;
+		width: 600px;
+		height: 800px;
+		margin:30px auto;
+		padding: 15px;
+		box-shadow:2px 1px 4px 2px rgba(0,0,0,0.3);
+		-webkit-transition:all 0.4s;
+		-moz-transition:all 0.4s;
+		-ms-transition:all 0.4s;
+		-o-transition:all 0.4s;
+		z-index: 998;
+	}
+	.paper:hover{
+		border-top-right-radius: 120px 30px;
+	}
+	.paper:before, .paper:after{
+		content: "";
+		background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); 
+		background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+		background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+		background:#FFF;
+		border:1px solid #CCC;
+		position: absolute;
+		z-index: 997;
+	    box-shadow:2px 1px 4px 2px rgba(0,0,0,0.3);
+	}
+	.paper:before{
+		height: 100%;
+		width: 94%;
+		top: -20px;
+		left: 20px
+	}
+	.paper:after {
+		height: 100%;
+		width: 97%;
+		top:-10px;
+		left: 10px;
+	}
+	.header,.content,footer{
+		float:left;
+		width:100%;
+	}
+	.header {
+		height: 70px;
+		border-bottom: 1px dashed #CCC;
+		border-bottom: 1px dashed #CCC;
+	}
+	#fullba{
+		background-color: rgba(229,229,229,.95);
+		left: 0;
+		opacity: 0.5;
+		position:fixed;
+		top:0;
+		z-index: -2;
+		filter: alpha(opacity = 50);
+		-moz-opacity: 0.5;
+		-khtml-opacity:0.5;
+		}
+	.close-layer {
+		width: 56px;
+		height: 56px;
+		position: fixed;
+		right: 0px;
+		top: 0;
+		cursor: pointer;
+		z-index: 99995;
+	}
+	.close-layer i {
+		background: url(/images/btn_close_layer.png) 0 0 no-repeat;
+		width: 36px;
+		height: 36px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -18px 0 0 -18px
+	}
+	.close-layer:hover i {
+		background-position: 0 -50px
+	}
+	#book{
+		display: none;
+	}
+	</style>
+
+</head>
+<body>
+<a onclick="setPop()">open</a>
+
+<div id="book" style="overflow: auto">
+	<div class="close-layer" onclick="setPop()">
+		<i></i>
+	</div>
+	<div id="fullba"></div>
+	<div class="paper">
+		<div class="header">
+
+		</div>
+	</div>
+</div>
+<script>
+	var action = 1;
+	function setPop() {
+		switch (action){
+			case 0:
+				$('#fullba,#book').hide();
+				action = 1;
+				break;
+			case 1:
+				var bower_width = $(document).width();
+				var bower_height = $(document).height();
+				$('#fullba').css({
+							width:bower_width,
+							height:bower_height,
+							display:'block'
+						}
+				);
+				$('#fullba,#book').show();
+				action = 0;
+				break;
+		}
+	}
+</script>
+</body>
+</html>

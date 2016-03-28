@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if(typeof(mydata)!=='undefind'){ %>
+    	<div><%- mydata.a %></div>
+    	<div>
+    	<% for(var db in mydata){%>
+    		<div><%- mydata[db] %></div>
+    	<%}%>
+    	</div>
+    <% }%>
+  </body>
+</html>

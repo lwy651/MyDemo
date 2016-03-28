@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/masonry.pkgd.min.js"></script>
+
+</head>
+<body>
+<div class="page-with-header page-min-width" style="display: block;">
+    <%- include header.html %>
+    <% if(typeof(notes)!=='undefind'&&notes.length>0){ %>
+        <div class="wrapper" style="width: 992px">
+            <div id="waterfall">
+            <% notes.forEach(function(item){ %>
+                <div class="wfc pin wft" style="position: absolute; left: -200px; top: -200px; opacity: 1;"><%= item.description %></div>
+            <% }) %>
+            </div>
+        </div>
+    <% } %>
+</div>
+<script>
+    $(function () {
+        $('#waterfall').masonry(
+                {
+                    itemSelector: '.wfc',
+                    gutter:15,
+                    //gutter: 15,
+                    //columnWidth: 236,
+                    //isFitWidth: true,
+                    isFitWidth:true
+                }
+        );
+    });
+</script>
+</body>
+</html>
