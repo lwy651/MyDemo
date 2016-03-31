@@ -15,7 +15,13 @@
         <div class="wrapper" style="width: 992px">
             <div id="waterfall">
             <% notes.forEach(function(item){ %>
-                <div class="wfc pin wft" style="position: absolute; left: -200px; top: -200px; opacity: 1;"><%= item.description %></div>
+                <div class="wfc pin wft" style="position: absolute; left: -200px; top: -200px; opacity: 1;">
+                    <%= item.description %>
+                    <div style="width:auto;height: 200px;"></div>
+                    <div style="width:auto;height: 30px;">
+                        <p><%= item.date %></p>
+                    </div>
+                </div>
             <% }) %>
             </div>
         </div>
